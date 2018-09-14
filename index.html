@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<meta name="keywords" content="Adam Davies, snake, game, web app, canvas">
+		<meta name="description" content="A fully custom Snake arcade game made with HTML/CSS/JS. Change the difficulty with boundaries, obstacles, speed, and size.">
+		<meta name="author" content="Adam Davies">
+		<link rel="stylesheet" type="text/css" href="snake.css">
+		<link rel="icon" type="image/x-icon" href="img/favicon.ico">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<script type="text/javascript" src="js/snake.js"></script>
+		<link href='http://fonts.googleapis.com/css?family=Roboto:500,100,300,400' rel='stylesheet' type='text/css'>
+		<title>Super Snake</title>
+	</head>
+	<body>
+		<header>
+			<div class="menu">
+				<div class="newgame">
+					<p>New Game</p>
+				</div>
+				<div class="boundscont cont" title="Without boundaries, the snake can move through the walls">
+					<input type="checkbox" class="bounds" value="bounds" checked="checked">
+					<p>Boundaries</p>
+				</div>
+				<div class="obstcont cont" title="Obstacles pop up after every collected piece">
+					<p>Obstacles</p>
+					<input type="range" class="obst" value="0" min="0" max="20" step="1">
+					<p class="val">0</p>
+				</div>
+				<div class="speedcont cont" title="Snake movement speed">
+					<p>Speed</p>
+					<input type="range" class="speed" value="2" min="1" max="3" step="1">
+					<p class="val">normal</p>
+				</div>
+				<div class="sizecont cont">
+					<div class="heightcont cont" title="Stage height (px)">
+						<p>Height</p>
+						<input type="range" class="stageh" value="100" min="100" max="500" step="10">
+					</div>
+					<div class="widthcont cont" title="Stage width (px)">
+						<p>Width</p>
+						<input type="range" class="stagew" value="100" min="100" max="500" step="10">
+					</div>
+				</div>
+			</div>
+			<div class="score">
+				<p class="label">SCORE</p>
+				<p class="num">0</p>
+			</div>
+		</header>
+		<section>
+			<canvas id="stage"></canvas>
+			<div id="count">
+				<p></p>
+			</div>
+			<div id="cover">
+				<p class="startnew">Choose your settings<br>and start a new game.</p>
+			</div>
+		</section>
+		<footer>
+			<a href="/#web"><span>HOME</span></a>
+			<span>Copyright &copy; 2016 Adam Davies</span>
+		</footer>
+	</body>
+</html>

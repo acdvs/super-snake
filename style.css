@@ -1,0 +1,243 @@
+* {
+	margin: 0px;
+	padding: 0px;
+}
+html, body {
+	height: 100%;
+	width: 100%;
+}
+body {
+	background: #737373;
+	overflow: hidden;
+	color: #fff;
+	font-family: Arial, sans-serif;
+}
+p {
+	font-size: 0.8em;
+	line-height: 35px;
+	font-family: Roboto, Arial, sans-serif;
+}
+
+header {
+	height: 37px;
+	background: #333;
+}
+
+.menu {
+	height: 100%;
+	float: left;
+}
+.newgame {
+	background: #484848;
+	padding: 1px 12px 1px 12px;
+	display: inline-block;
+	cursor: pointer;
+}
+.newgame:hover {
+	background: #5e5e5e;
+}
+.newgame p {
+	text-align: center;
+	min-width: 62.5px;
+}
+.cont {
+	height: 100%;
+}
+.menu > .cont {
+	padding: 0px 10px 0px 10px;
+	position: relative;
+	top: -1px;
+}
+.cont, .cont > * {
+	display: inline-block;
+}
+
+.boundscont input {
+	position: relative;
+	top: 3px;
+	cursor: pointer;
+}
+
+.obstcont {
+	width: 155px;
+}
+
+.speedcont {
+	width: 160px;
+}
+
+.sizecont {
+	background: #484848;
+}
+.sizecont .widthcont {
+	padding: 0px 0px 0px 10px;
+}
+
+.score {
+	height: 100%;
+}
+.score p {
+	padding: 5px 4px 0px 0px;
+	text-align: right;
+	line-height: 10px;
+	font-size: 0.7em;
+}
+
+#stage {
+	border: 10px solid #333;
+	background: #000;
+	display: block;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	box-shadow: 0px 0px 30px -5px #000;
+	-moz-box-shadow: 0px 0px 30px -5px #000;
+	-webkit-box-shadow: 0px 0px 30px -5px #000;
+	transform: translateX(-50%) translateY(-50%);
+	-ms-transform: translateX(-50%) translateY(-50%);
+	-webkit-transform: translateX(-50%) translateY(-50%);
+	z-index: -1;
+}
+
+#count {
+	width: 100px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translateX(-50%) translateY(-50%);
+	-ms-transform: translateX(-50%) translateY(-50%);
+	-webkit-transform: translateX(-50%) translateY(-50%);
+}
+#count p {
+	font-size: 5em;
+	text-align: center;
+	color: #fff;
+}
+	
+#cover {
+	width: 190px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translateX(-50%) translateY(-50%);
+	-ms-transform: translateX(-50%) translateY(-50%);
+	-webkit-transform: translateX(-50%) translateY(-50%);
+}
+#cover .gameover {
+	font-size: 2em;
+	text-align: center;
+	color: #fff;
+}
+#cover .reason {
+	font-size: 1em;
+	text-align: center;
+	margin-bottom: 1px;
+	line-height: 18px;
+	border-bottom: 1px solid #fff;
+	padding-bottom: 5px;
+}
+#cover .startnew {
+	font-size: 1em;
+	text-align: center;
+	line-height: 18px;
+}
+
+footer {
+	height: 37px;
+	background: #333;
+	position: absolute;
+	bottom: 0px;
+	width: 100%;
+}
+footer span {
+	font-size: 75%;
+	line-height: 12px;
+	color: #a4a4a4;
+}
+footer a span {
+	position: absolute;
+	padding: 14px 14px 14px 14px;
+	background: #8a2121;
+	color: #fdbcbc;
+}
+footer a span:hover {
+	background: #a22e2e;
+}
+footer > span {
+	position: absolute;
+	right: 10px;
+	bottom: 12px;
+}
+
+/*======================= RANGES =======================*/
+input[type="range"]:focus {
+	outline: none;
+}
+
+/*============ WEBKIT ============*/
+input[type="range"] {
+	-webkit-appearance: none;
+	height: 8px;
+	width: 70px;
+	background: #595959;
+	overflow: hidden;
+	border-radius: 0px;
+	border: 1px solid #fff;
+	position: relative;
+	top: 1px;
+}
+input[type="range"]::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	border-radius: 0px;
+	border: none;
+	background: #fff;
+	cursor: pointer;
+	margin-top: 0px;
+	width: 8px;
+	height: 8px;
+}
+
+/*============ FIREFOX ============*/
+.firefox input[type="range"]::-moz-range-track {
+	height: 8px;
+	width: 70px;
+	background: #595959;
+	overflow: hidden;
+	border-radius: 0px;
+	border: 1px solid #fff;
+	position: relative;
+	top: 1px;
+}
+.firefox input[type="range"]::-moz-range-thumb {
+	border-radius: 0px;
+	border: none;
+	background: #bfbfbf;
+	cursor: pointer;
+	margin-top: 0px;
+	width: 8px;
+	height: 8px;
+}
+
+/*============ IE ============*/
+input[type="range"]::-ms-fill-lower, input[type="range"]::-ms-fill-upper {
+	background: transparent;
+}
+input[type="range"]::-ms-track {
+	height: 8px;
+	width: 70px;
+	background: #595959;
+	overflow: hidden;
+	border-radius: 0px;
+	border: 1px solid #fff;
+	position: relative;
+	top: 1px;
+}
+input[type="range"]::-ms-thumb {
+	border-radius: 0px;
+	border: none;
+	background: #bfbfbf;
+	cursor: pointer;
+	margin-top: 0px;
+	width: 8px;
+	height: 8px;
+}
