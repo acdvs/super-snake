@@ -11,8 +11,8 @@ $(document).ready(function() {
 	var minH, minW, ptsInStgH, ptsInStgW, partSize;
 
 	// Base elements
+    var canvas = document.getElementById('stage').getContext('2d');
 	var $stage = $('#stage');
-    var $canvas = $stage.getContext('2d');
 	var $cover = $('#cover');
 	var $count = $('#count');
 
@@ -295,19 +295,19 @@ $(document).ready(function() {
 
 	function draw() {
 		if (gate) return;
-		$canvas.clearRect(0, 0, $stage.width(), $stage.height());
+		canvas.clearRect(0, 0, $stage.width(), $stage.height());
 
-		$canvas.fillStyle = SNAKE.color;
+		canvas.fillStyle = SNAKE.color;
 		for (var i=0; i<SNAKE.parts.length; i++) {
-			$canvas.fillRect(SNAKE.parts[i].x, SNAKE.parts[i].y, partSize, partSize);
+			canvas.fillRect(SNAKE.parts[i].x, SNAKE.parts[i].y, partSize, partSize);
         }
 
-		$canvas.fillStyle = FOOD.color;
-		$canvas.fillRect(FOOD.x, FOOD.y, partSize, partSize);
+		canvas.fillStyle = FOOD.color;
+		canvas.fillRect(FOOD.x, FOOD.y, partSize, partSize);
 
-		$canvas.fillStyle = OBST.color;
+		canvas.fillStyle = OBST.color;
 		for (i=0; i<OBST.parts.length; i++) {
-			$canvas.fillRect(OBST.parts[i].x, OBST.parts[i].y, partSize, partSize);
+			canvas.fillRect(OBST.parts[i].x, OBST.parts[i].y, partSize, partSize);
         }
 	}
 
@@ -369,7 +369,7 @@ $(document).ready(function() {
 
 	// when game ends
 	function showMenu(reason) {
-		$canvas.clearRect(0, 0, $stage.width(), $stage.height());
+		canvas.clearRect(0, 0, $stage.width(), $stage.height());
 		clearInterval(moveTime);
 		clearInterval(limitMov);
 		allowStart = true;
