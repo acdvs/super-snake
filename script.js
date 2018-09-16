@@ -19,8 +19,8 @@ $(() => {
     // Menu options
     var allowStart = true;
     var allowCancel = false;
-    var speedTxt = '';
-    var speedNum = 60;
+    var speedNum = $('.speed').val();
+    var speedTxt = $('.speedcont .val').text();
     var score = 0;
 
     function Part(x, y) {
@@ -79,15 +79,13 @@ $(() => {
     });
 
     $('.speed').change(function() {
-        if ($('.speed').val() === 1) {
+        speedNum = $('.speed').val();
+        if (speedNum > 72) {
             speedTxt = 'slow';
-            speedNum = 100;
-        } else if ($('.speed').val() === 2) {
+        } else if (speedNum > 46) {
             speedTxt = 'normal';
-            speedNum = 60;
         } else {
             speedTxt = 'fast';
-            speedNum = 30;
         }
         $('.speedcont .val').text(speedTxt);
     });
@@ -319,21 +317,21 @@ $(() => {
 
     // before game starts
     function countdown() {
-        var countDown = 6;
+        var count = 6;
         $cover.css('display', 'none');
         $('input').attr('disabled', true);
         $('.newgame p').text('End Game');
         allowStart = false;
 
         var startTime = setInterval(function() {
-            if (countDown % 2 === 0 && countDown !== 0) {
+            if (count % 2 === 0 && count !== 0) {
                 $stage.css('border', '10px solid #FF0000');
-                $('#count p').text(countDown / 2);
+                $('#count p').text(count / 2);
             } else {
                 $stage.css('border', '10px solid #333333');
             }
-            countDown--;
-            if (countDown < 0) {
+            count--;
+            if (count < 0) {
                 clearInterval(startTime);
                 $('#count p').text('');
                 startGame();
@@ -342,14 +340,12 @@ $(() => {
     }
 
     // when game starts
-    var moveTime, limitMov;
+    var moveInterval;
     function startGame() {
         if (!test) {
-            moveTime = setInterval(function() {
+            moveInterval = setInterval(() => {
                 update();
                 draw();
-            }, speedNum);
-            limitMov = setInterval(function() {
                 SNAKE.change = true;
             }, speedNum);
         }
@@ -370,8 +366,7 @@ $(() => {
     // when game ends
     function showMenu(reason) {
         canvas.clearRect(0, 0, $stage.width(), $stage.height());
-        clearInterval(moveTime);
-        clearInterval(limitMov);
+        clearInterval(moveInterval);
         allowStart = true;
         allowCancel = false;
         gate = true;
@@ -402,20 +397,19 @@ $(() => {
     \*===================================================*/
 
     function randomPos(num) {
-        if (num) {
-            return partSize * (Math.floor(Math.random() * ptsInStgW)); // 1 = x
-        } else {
-            return partSize * (Math.floor(Math.random() * ptsInStgH)); // 0 = y
-        }
+        var unit = num ? ptsInStgW : ptsInStgH; // 1 = x, 0 = y
+        var pos = partSize * (Math.floor(Math.random() * ptsInStgW));
+        return pos;
     }
 
     // snaps raw values to window-size-friendly values
     function fixSize(num) {
         var temp = Math.floor(num);
-        while (temp % partSize !== 0) {
+        /*while (temp % partSize !== 0) {
             temp--;
-        }
-        return temp;
+        }*/
+        var fixed = partSize * Math.floor(temp / partSize);
+        return fixed;
     }
 
     function setSizes() {
