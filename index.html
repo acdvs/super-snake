@@ -2,15 +2,20 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-		<meta name="keywords" content="Adam Davies, snake, game, web app, canvas">
-		<meta name="description" content="A fully custom Snake arcade game made with HTML/CSS/JS. Change the difficulty with boundaries, obstacles, speed, and size.">
-		<meta name="author" content="Adam Davies">
-		<link rel="stylesheet" type="text/css" href="style.css">
-		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-		<script type="text/javascript" src="script.js"></script>
-		<link href='https://fonts.googleapis.com/css?family=Roboto:400' rel='stylesheet' type='text/css'>
 		<title>Super Snake</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<meta name="keywords" content="Adam Davies, snake, arcade, game">
+		<meta name="description" content="A classic Snake recreation made with HTML/CSS/JS. Change the difficulty with speed, boundaries, obstacles, and size.">
+		<meta name="author" content="Adam Davies">
+		<link rel="canonical" href="https://adamdavies001.github.io/super-snake/">
+		<meta name="theme-color" content="#ffffff">
+		<meta property="og:type" content="website">
+		<meta property="og:site_name" content="Super Snake">
+		<meta property="og:url" content="https://adamdavies001.github.io/super-snake/">
+		<meta property="og:title" content="Super Snake">
+		<meta property="og:description" content="A classic Snake recreation made with HTML/CSS/JS. Change the difficulty with speed, boundaries, obstacles, and size.">
+		<link rel="stylesheet" type="text/css" href="dist/style.css">
+		<link href='https://fonts.googleapis.com/css?family=Roboto:400' rel='stylesheet' type='text/css'>
 	</head>
 	<body>
 		<header>
@@ -29,7 +34,7 @@
 				</div>
 				<div class="speedcont cont" title="Snake movement speed">
 					<p>Speed</p>
-					<input type="range" class="speed" value="60" min="20" max="100" step="5" style="direction:rtl">
+					<input type="range" class="speed" value="60" min="20" max="100" step="5" style="direction: rtl;">
 					<p class="val">normal</p>
 				</div>
 				<div class="sizecont cont">
@@ -58,8 +63,11 @@
 			</div>
 		</section>
 		<footer>
-			<a href="http://adam-davies.me"><span>HOME</span></a>
+			<a href="https://adam-davies.me"><span>HOME</span></a>
 			<span>Copyright &copy; Adam Davies</span>
 		</footer>
+
+		<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+		<script type="text/javascript" src="dist/script.js"></script>
 	</body>
 </html>
