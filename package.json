@@ -1,0 +1,31 @@
+{
+  "name": "super-snake",
+  "version": "1.0.0",
+  "description": "A fully custom Snake arcade game made with HTML/CSS/JS. Change the difficulty by disabling boundaries, adding obstacles on every pickup, increasing or decreasing speed, and altering the playing field size.",
+  "main": "script.js",
+  "scripts": {
+    "build": "babel src -d dist --no-comments --copy-files"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adamdavies001/super-snake.git"
+  },
+  "keywords": [
+    "snake",
+    "game",
+    "arcade"
+  ],
+  "author": "Adam Davies",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/adamdavies001/super-snake/issues"
+  },
+  "homepage": "https://github.com/adamdavies001/super-snake#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.9.5",
+    "babel-preset-minify": "^0.5.1",
+    "eslint": "^6.8.0"
+  }
+}
